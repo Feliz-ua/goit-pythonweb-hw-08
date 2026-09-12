@@ -1,0 +1,119 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Python build and packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+*.egg
+MANIFEST
+
+.venv/
+venv/
+env/
+ENV/
+.env/
+.venv.bak/
+
+
+.env
+.env.*
+!.env.example
+
+
+*.pid
+*.log
+
+
+
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.cache/
+coverage.xml
+*.cover
+*.py,cover
+nosetests.xml
+test-results/
+junit.xml
+
+
+
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+.dmypy.json
+dmypy.json
+
+
+
+.vscode/
+.idea/
+*.iml
+
+
+
+.ipynb_checkpoints/
+
+
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+
+# =========================
+# Temporary files
+# =========================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+*.rej
+
+# =========================
+# Documentation and tools
+# =========================
+
+.pytest_cache/
+.mypy_cache/
+
+# =========================
+# Docker
+# =========================
+
+docker-compose.override.yml
+
+# =========================
+# Local project files
+# =========================
+
+contacts.db
