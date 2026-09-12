@@ -40,14 +40,6 @@ go it-pythonweb-hw-08/
 - SQLite.
 
 ## Встановлення
-
-Клонуйте репозиторій та перейдіть до його каталогу:
-
-```powershell
-git clone <URL_ВАШОГО_РЕПОЗИТОРІЮ>
-cd goit-pythonweb-hw-08
-```
-
 Створіть віртуальне середовище:
 
 ```powershell
