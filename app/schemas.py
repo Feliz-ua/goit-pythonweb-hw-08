@@ -1,4 +1,5 @@
 from datetime import datetime
+from datetime import date
 
 from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
@@ -15,6 +16,8 @@ class ContactBase(BaseModel):
     )
 
     email: EmailStr
+    
+    birth_date: date | None = None
 
     phone: str | None = Field(
         default=None,
@@ -50,6 +53,8 @@ class ContactUpdate(BaseModel):
     )
 
     email: EmailStr | None = None
+    
+    birth_date: date | None = None
 
     phone: str | None = Field(
         default=None,

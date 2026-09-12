@@ -1,5 +1,6 @@
 from sqlalchemy import or_, select
 from sqlalchemy.orm import Session
+from datetime import date, timedelta
 
 from . import models, schemas
 
@@ -95,3 +96,32 @@ def delete_contact(
 ) -> None:
     db.delete(contact)
     db.commit()
+    
+def get_upcoming_birthdays(
+    db: Session,
+) -> list[models.Contact]:
+    today = date.today()
+    end_date = today + timedelta(days=7)
+
+    contacts = db.scalars(
+        select(models.Contact)
+        .where(models.Contact.birth_date.is_not(None))
+        .order_by(models.Contact.birth_date)
+    ).all()
+
+    upcoming_contacts = []
+
+    for contact in contacts:
+        birthday = contact.birth_date.replace(
+            year=today.year
+        )
+
+        if birthday < today:
+            birthday = birthday.replace(
+                year=today.year + 1
+            )
+
+        if today <= birthday <= end_date:
+            upcoming_contacts.append(contact)
+
+    return upcoming_contacts

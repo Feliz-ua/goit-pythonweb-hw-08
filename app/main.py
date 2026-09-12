@@ -14,6 +14,15 @@ app = FastAPI(
     version="1.0.0",
 )
 
+@app.get(
+    "/contacts/birthdays",
+    response_model=list[schemas.ContactResponse],
+    tags=["Contacts"],
+)
+def read_upcoming_birthdays(
+    db: Session = Depends(get_db),
+) -> list[models.Contact]:
+    return crud.get_upcoming_birthdays(db)
 
 @app.get(
     "/",

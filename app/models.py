@@ -1,6 +1,6 @@
-from datetime import datetime
+from datetime import date, datetime
 
-from sqlalchemy import DateTime, String, func
+from sqlalchemy import Date, DateTime, String, func
 from sqlalchemy.orm import Mapped, mapped_column
 
 from .database import Base
@@ -45,6 +45,11 @@ class Contact(Base):
         nullable=True,
     )
 
+    birth_date: Mapped[date | None] = mapped_column(
+        Date,
+        nullable=True,
+    )   
+    
     created_at: Mapped[datetime] = mapped_column(
         DateTime,
         server_default=func.now(),

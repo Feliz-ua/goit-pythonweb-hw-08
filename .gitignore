@@ -83,13 +83,9 @@ $RECYCLE.BIN/
 .LSOverride
 ._*
 
-# Linux
 *~
 .directory
 
-# =========================
-# Temporary files
-# =========================
 
 *.tmp
 *.temp
@@ -99,21 +95,14 @@ $RECYCLE.BIN/
 *.orig
 *.rej
 
-# =========================
-# Documentation and tools
-# =========================
+
 
 .pytest_cache/
 .mypy_cache/
 
-# =========================
-# Docker
-# =========================
 
 docker-compose.override.yml
 
-# =========================
-# Local project files
-# =========================
+
 
 contacts.db
